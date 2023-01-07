@@ -11,15 +11,20 @@ router.get('/', (req, res) => {
 })
 // 搜尋&排序
 router.get('/search', (req, res) => {
-  const keyword = req.query.keyword.trim().toLowerCase() || ''
+  let keyword = req.query.keyword.trim().toLowerCase() || ''
   const sort = req.query.sort
   let sorter = {}
   const selected = {
+    all: false,
     asc: false,
     desc: false,
     category: false,
     location: false
   }
+  if (sort === 'all' && keyword === '') {
+    selected.all = true
+    return res.redirect('/')
+  } 
   if (sort === 'asc') {
     sorter = { name: 'asc' }
     selected.asc = true
