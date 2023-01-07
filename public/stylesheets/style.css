@@ -10,6 +10,14 @@ header {
   color: #226089;
 }
 
+.navbar .create-btn{
+  background-color: #4592af;
+  border: 0;
+}
+.navbar .create-btn:hover{
+  background-color: #226089;
+}
+
 .banner {
   position: relative;
   z-index: -1;
@@ -40,9 +48,21 @@ header {
   font-size: 0.8rem;
 }
 
-.btn-major {
+#submit-button, #search-button {
   background-color: #9b4b4b;
+  border: 0;
   color: white;
+}
+#submit-button:hover,
+#search-button:hover {
+  background-color: #9c2d2d;
+}
+.restaurant img{
+  transition: all 0.3s;
+}
+
+.restaurant:hover img{
+  transform: scale(1.5);
 }
 
 .form-control:focus {

@@ -9,13 +9,14 @@ router.get('/', (req, res) => {
     .catch(error => console.error(error))
 })
 router.get('/search', (req, res) => {
-  keyword = req.query.keyword.trim().toLowerCase()
+  const keyword = req.query.keyword.trim().toLowerCase() || ''
   Restaurant.find()
   .lean()
   .then(restaurant => {
-    restaurants = restaurant.filter(i => i.name.includes(keyword) || i.category.includes(keyword))
-    return res.render('index', { restaurants })
+    const restaurants = restaurant.filter(i => i.name.includes(keyword) || i.category.includes(keyword))
+    return res.render('index', { restaurants, keyword })
   })
+  .catch(error => console.error(error))
 })
 
 module.exports = router
