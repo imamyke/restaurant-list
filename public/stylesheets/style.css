@@ -65,6 +65,11 @@ header {
   transform: scale(1.5);
 }
 
+.form-select:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
 .form-control:focus {
   box-shadow: none;
   border-color: #ced4da;
