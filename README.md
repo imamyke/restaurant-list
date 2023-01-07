@@ -6,7 +6,7 @@
 ### 首頁
 ![MyImage](https://i.imgur.com/iAxGCOO.jpg)
 ### 使用搜尋按鈕找到特定的餐廳
-![MyImage](https://i.imgur.com/TZREP75.png
+![MyImage](https://i.imgur.com/TZREP75.png)
 ### 使用排序按鈕顯示畫面
 ![MyImage](https://i.imgur.com/tj7Jyki.png)
 ### 餐廳詳細資訊
