@@ -1,25 +1,25 @@
 <!-- search bar -->
 <div class="container search-bar">
   <div class="search-bar-outer">
-    <div class="search-bar-inner d-flex">
-      <form id="search-form" class="col-9" action="/search">
-        <h4 class="mb-2">尋找餐廳：</h4>
-        <div class="input-group">
+    <div class="search-bar-inner">
+      <h4 class="mb-2">尋找餐廳：</h4>
+      <form id="search-form" class="d-flex" action="/search">
+        <div class="input-group col-9">
           <input type="text" name="keyword" class="form-control search-input" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
             value="{{ keyword }}" aria-describedby="search-button">
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
+          <div class="col-3 ps-3">
+            <select name="sort" class="form-select" aria-label="Default select example">
+              <option value="default" selected>排序</option>
+              <option value="asc" {{#if selected.asc}} selected {{/if}}>A -> Z</option>
+              <option value="desc" {{#if selected.desc}} selected {{/if}}>Z -> A</option>
+              <option value="category" {{#if selected.category}} selected {{/if}}>類別</option>
+              <option value="location" {{#if selected.location}} selected {{/if}}>地區</option>
+            </select>
+          </div>
         </div>
-      </form>
-      <form action="/sort" class="col-3 align-self-end ps-3">
-        <select name="sort" class="form-select" aria-label="Default select example" onchange="this.form.submit()">
-          <option value="default" selected>排序</option>
-          <option value="asc" {{#if selected.asc}} selected {{/if}}>A -> Z</option>
-          <option value="desc" {{#if selected.desc}} selected {{/if}}>Z -> A</option>
-          <option value="category" {{#if selected.category}} selected {{/if}}>類別</option>
-          <option value="location" {{#if selected.location}} selected {{/if}}>地區</option>
-        </select>
       </form>
     </div>
   </div>
@@ -53,7 +53,7 @@
                     class="fa-solid fa-pencil text-secondary"></i></a>
                 <a href="/restaurants/{{ _id }}" class="pe-3 icon"><i
                     class="fa-solid fa-file-lines text-secondary"></i></a>
-                <button type="button" class="btn bg-transparent" data-bs-toggle="modal" style="border: 0; padding: 0;" data-bs-target="#a{{ _id }}">
+                <button type="button" class="bg-transparent icon" data-bs-toggle="modal" style="border: 0; padding: 0;" data-bs-target="#a{{ _id }}">
                   <i class="fa-solid fa-trash-can text-secondary text-end"></i>
                 </button>
               </div>

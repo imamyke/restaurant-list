@@ -93,6 +93,14 @@ header {
   white-space:nowrap;
 }
 
+.icon i:before{
+  transition: all 0.3s;
+}
+
+.icon:hover i:before{
+  color: #9b4b4b
+}
+
 .restaurant-category {
   color: #666666;
   font-size: 0.8rem;
