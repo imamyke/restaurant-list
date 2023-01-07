@@ -15,14 +15,12 @@ router.get('/search', (req, res) => {
   const sort = req.query.sort
   let sorter = {}
   const selected = {
-    all: false,
     asc: false,
     desc: false,
     category: false,
     location: false
   }
   if (sort === 'all' && keyword === '') {
-    selected.all = true
     return res.redirect('/')
   } 
   if (sort === 'asc') {
