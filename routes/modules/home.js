@@ -45,15 +45,6 @@ router.get('/search', (req, res) => {
   })
   .catch(error => console.error(error))
 })
-// 排序
-router.get('/sort', (req, res) => {
-  
-  Restaurant.find()
-  .lean()
-  .sort(sorter)
-  .then(restaurants => res.render('index', { restaurants, selected }))
-  .catch(error => console.error(error))
-})
 
 module.exports = router
 
