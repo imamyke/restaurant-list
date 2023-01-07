@@ -21,11 +21,11 @@ router.get('/search', (req, res) => {
     location: false
   }
   if (sort === 'asc') {
-    sorter = { _id: 'asc' }
+    sorter = { name: 'asc' }
     selected.asc = true
   }
   if (sort === 'desc') {
-    sorter = { _id: 'desc' }
+    sorter = { name: 'desc' }
     selected.desc = true
   }
   if (sort === 'category') {
