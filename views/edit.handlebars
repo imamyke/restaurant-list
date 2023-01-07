@@ -1,0 +1,113 @@
+<header>
+  <!-- navigation -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="好。吃">
+          吃吃食記
+        </a>
+    </div>
+  </nav>
+  <div class="banner"></div>
+</header>
+
+<h1 class="mb-1 restaurant-show-title">編輯食記</h1>
+<div class="container mb-5">
+  <div class="row mx-auto">
+    <div class="col-sm-6 mx-auto">
+      <form id="form" action="/restaurants/{{restaurant._id}}?_method=PUT" method="POST" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">餐廳名稱<span class="text-danger">*</span></label>
+          <input type="text" name="name" class="form-control" id="name" placeholder="請輸入餐廳名稱 ..." value="{{restaurant.name}}" required>
+          <div class="valid-feedback">
+            Valid
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="name_en" class="form-label">餐廳英文名稱</label>
+          <input type="text" name="name_en" class="form-control" id="name_en" placeholder="請輸入餐廳英文名稱 ..." value="{{restaurant.name_en}}">
+        </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">餐廳分類標籤<span class="text-danger">*</span></label>
+          <input type="text" name="category" class="form-control" id="category" maxlength="10" placeholder="請輸入餐廳分類標籤(最多十個字) ..." value="{{restaurant.category}}" required>
+          <div class="valid-feedback">
+            Valid
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">餐廳電話<span class="text-danger">*</span></label>
+          <input type="tel" name="phone" class="form-control" id="phone" placeholder="請輸入餐廳電話" value="{{restaurant.phone}}" required>
+          <div class="valid-feedback">
+            Valid
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="rating" class="form-label">餐廳評分(最高5分)<span class="text-danger">*</span></label>
+          <div class="row g-2 align-items-center">
+            <div class="col">
+              <input type="number" id="rating" name="rating" class="form-control" min="0" max="5" step="0.1" value="{{restaurant.rating}}" required>
+              <div class="valid-feedback">
+                Valid
+              </div>
+              <div class="invalid-feedback">
+                This field is required!
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">餐廳介紹<span class="text-danger">*</span></label>
+          <input type="text" name="description" class="form-control" id="description" placeholder="請介紹餐廳風格、美食特色等等 ..." value="{{restaurant.description}}" required>
+          <div class="valid-feedback">
+            Valid
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-label">餐廳地址<span class="text-danger">*</span></label>
+          <input type="text" name="location" class="form-control" id="location" placeholder="請輸入餐廳地址 ..." value="{{restaurant.location}}" required>
+          <div class="valid-feedback">
+            Valid
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="google_map" class="form-label">Google Map<span class="text-danger">*</span></label>
+          <input type="url" name="google_map" class="form-control" id="google_map" placeholder="請貼上Google Map網址 ..." value="{{restaurant.google_map}}"  required>
+          <div class="valid-feedback">
+            Valid
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">餐廳照片網址<span class="text-danger">*</span></label>
+          <input type="url" name="image" class="form-control" id="image" placeholder="請貼上餐廳照片網址 ..." value="{{restaurant.image}}" required>
+          <div class="valid-feedback">
+            Valid
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <button id="submit-button" type="submit" class="btn btn-major">確定</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
