@@ -13,6 +13,8 @@
 ![MyImage](https://i.imgur.com/bG8e4ht.png)
 ### 新增餐廳資訊
 ![MyImage](https://i.imgur.com/z377syL.png)
+### 表單輸入不完全時，表單驗證機制畫面
+![MyImage](https://i.imgur.com/BtK70Lu.png)
 ### 編輯餐廳資訊
 ![MyImage](https://i.imgur.com/w0hUplT.png)
 ### 刪除餐廳資訊
