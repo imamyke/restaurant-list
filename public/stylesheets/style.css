@@ -278,6 +278,7 @@ form.was-validated .form-control:valid ~ .valid-feedback {
     padding: 8px 10px;
     width: 100%;
     height: 36px;
+    font-size: 14px;
 }
 .form__info input[type="text"]::placeholder,
 .form__info input[type="password"]::placeholder,
