@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 header {
   overflow: hidden;
 }
@@ -98,7 +102,7 @@ header {
 }
 
 .icon:hover i:before{
-  color: #9b4b4b
+  color: #9b4b4b;
 }
 
 .restaurant-category {
@@ -157,4 +161,221 @@ form.was-validated input:valid {
 form.was-validated .form-control:invalid ~ .invalid-feedback,
 form.was-validated .form-control:valid ~ .valid-feedback {
   display: initial;   /* 顯示 */
+}
+
+.login-form {
+  width: 840px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.theme{
+  position: relative;
+  background-color: #9c2d2d;
+  padding: 20px;
+  height: 550px;
+}
+.theme .title{
+    color: #FFF;
+    line-height: 32px;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+.theme .para{
+    margin-top: 10px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #FFF; 
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+.theme .footer{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.theme .footer .copyright{
+    color: #FFF;
+    font-size: 8px;
+    width: 170px;
+}
+
+.theme span:before{
+    content: '';
+    display: block;
+    width: 80%;
+    height: 1px;
+    background-color: #FFF;
+    position: absolute;
+    top: 50%;
+    left: -80%;
+    transform: translate(0,-50%);
+}
+.theme span:after{
+    content: '';
+    display: block;
+    width: 80%;
+    height: 1px;
+    background-color: #FFF;
+    position: absolute;
+    top: 50%;
+    right: -80%;
+    transform: translate(0,-50%);
+}
+.theme .image{
+    width: 300px;
+    height: 300px;
+    background-image: url(../image/Easter\ balloon_theme.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* Form info */
+.form__info{
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+  position: relative;
+}
+.form-container {
+  width: 50%;
+  margin: 28px auto;
+}
+.form-container.login-page {
+  margin: 80px auto;
+}
+.form__info .title{
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+}
+.form__info label{
+  font-family: 'Roboto', sans-serif;  
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.form__info input[type="text"],
+.form__info input[type="password"],
+.form__info input[type="email"]{
+    display: block;
+    outline: 0;
+    border-radius: 8px;
+    border: 1px solid #000;
+    margin-bottom: 16px;
+    padding: 8px 10px;
+    width: 100%;
+    height: 36px;
+}
+.form__info input[type="text"]::placeholder,
+.form__info input[type="password"]::placeholder,
+.form__info input[type="email"]::placeholder {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form__info input:focus {
+    border: 1px solid #9b4b4b;
+    outline: 4px solid #9b4b4b46;
+}
+.form__info .form-btn-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.form-btn-group .form-btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: 6px 10px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+} 
+.form-btn-group .form-btn:last-child {
+  margin-top: 16px;
+}
+.form-btn-primary{
+  background-color:#9b4b4b;
+  background-color: #9c2d2d;
+  border: 1px solid #9c2d2d;
+  color: #fff;
+}
+.form-btn-secondary{
+    border: 1px solid #000;
+    color: #000;
+}
+.form-btn:active{
+    transform: translateY(3px);
+}
+.form-btn-primary:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #9b4b4b;
+    color: #fff;
+}
+.form-btn-secondary:hover{
+  border: 1px solid #000;
+  color: #000;
+  color: #4392af;
+}
+.form-btn-secondary.login-fb {
+  background-color: #4392afd8;
+  color: #fff;
+  border: 1px solid #4392af;
+}
+.form-btn-secondary.login-fb:hover {
+  background-color: #4392afb2;
+}
+.form-btn i{
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Form */
+.form__group{
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.form__group .user__info{
+    margin-bottom: 20px;
+}
+.form__group .title{
+    color: #3C4048;
+}
+.form__group .para{
+    margin-bottom: 10px;
+}
+.login__group{
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+.login__group .login{
+    padding-left: 4px;
+    color: #B2B2B2;
+    font-size: 12px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.login__group .login:hover{
+    color: #9b4b4b;
+    text-decoration: underline;
 }

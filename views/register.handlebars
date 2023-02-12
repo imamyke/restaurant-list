@@ -1,0 +1,46 @@
+<div class="container login-form" style="border-radius: 10px; overflow: hidden;">
+  <div class="row">
+    <div class="col-4" style="padding: 0;">
+      <div class="theme">
+        <h1 class="title">Now,<br>Start your journey.</h1>
+        <p class="para">A journey of a thousand miles must begin with a single step.<br>– Laozi, Philosopher</p>
+        <div class="image"></div>
+        <div class="footer">
+          <div class="copyright"><span>Copyright@2022 by Amy Ke</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 bg-white" style="padding: 0;">
+      <div class="form__info">
+        <div class="form-container">
+          <h1 class="title">Create account</h1>
+          <form action="/users/register" method="POST">
+            <!-- Info -->
+            <div class="user__info" style="position: relative;">
+              <label for="name">Username</label>
+              <input id="name" type="text" name="name" placeholder="Enter Name" value="{{ name }}">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" name="email" placeholder="Enter Email" value="{{ email }}">
+              <label for="password">Password</label>
+              <input id="password" type="password" name="password" placeholder="Enter Password" value="{{ password }}">
+              <label for="confirmPassword" class="mb-2">Confirm Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm Password"
+                value="{{ confirmPassword }}">
+            </div>
+            <!-- Btn -->
+            <div class="form-btn-group">
+              <button type="submit" class="form-btn form-btn-primary">Create account</button>
+              <a href="/auth/facebook" class="form-btn form-btn-secondary login-fb">
+                <i class="fa-brands fa-facebook"></i></i>Sign up with Facebook
+              </a>
+            </div>
+          </form>
+          <!-- Login -->
+          <div class="login__group">
+            <span class="forgot">Already have an account?<a href="/users/login" class="login">Log in</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
