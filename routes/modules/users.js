@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const User = require('../../models/user')
 const passport = require('passport')
+const bcrypt = require('bcryptjs')
 
 router.get('/login', (req, res) => {
   res.render('login')
@@ -36,30 +37,27 @@ router.post('/register', (req, res) => {
     errors.push({ message: '密碼與確認密碼不相符！' })
   }
   if (errors.length) {
-    const form = req.body
-    return res.render('register', { ...form, errors})
+    return res.render('register', { ...req.body, errors})
   }
-
-
   // 檢查使用者是否已經註冊
   User.findOne({ email }).then(user => {
     // 如果已經註冊：退回原本畫面
     if (user) {
       errors.push({ message: '這個 Email 已經註冊過了。' })
-      const form = req.body
-      res.render('register', { ...form, errors })
-    } else {
-      // 如果還沒註冊：寫入資料庫
-      return User.create({
+      res.render('register', { ...req.body, errors })
+    } 
+    // 如果還沒註冊：寫入資料庫
+    return bcrypt
+      .genSalt(10)
+      .then(salt => bcrypt.hash(password, salt))
+      .then(hash => User.create({
         name,
         email,
-        password
-      })
-        .then(() => res.redirect('/'))
-        .catch(err => console.log(err))
-    }
+        password: hash
+      }))
+    .then(() => res.redirect('/'))
+    .catch(err => console.log(err))
   })
-  .catch(err => console.log(err))
 })
 
 module.exports = router
