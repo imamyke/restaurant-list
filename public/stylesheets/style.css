@@ -366,16 +366,25 @@ form.was-validated .form-control:valid ~ .valid-feedback {
     font-size: 14px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-
 }
-.login__group .login{
+.login__group .login {
     padding-left: 4px;
     color: #B2B2B2;
     font-size: 12px;
     text-align: center;
     transition: all 0.3s;
 }
-.login__group .login:hover{
+.login__group .login:hover {
     color: #9b4b4b;
     text-decoration: underline;
+}
+.logout-btn {
+  color: #B2B2B2;
+  font-size: 14px;
+}
+.logout-btn:hover {
+  color: #B2B2B2;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: underline;
 }

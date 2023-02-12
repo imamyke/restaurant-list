@@ -7,7 +7,12 @@
           width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
         吃吃食記
       </a>
-      <a class="btn btn-primary create-btn" href="/restaurants" role="button">Create</a>
+      {{#if isAuthenticated}}
+      <div class="logout-group">
+        <a class="btn btn-primary create-btn" href="/restaurants" role="button">Create</a>
+        <a class="btn logout-btn" href="/users/logout" role="button">Log out</a>
+      </div>
+      {{/if}}
     </div>
   </nav>
 

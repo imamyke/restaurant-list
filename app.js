@@ -32,6 +32,12 @@ app.use(methodOverride('_method'))
 const usePassport = require('./config/passport')
 usePassport(app)
 
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.user = req.user
+  next()
+})
+
 // 總路由
 const routers = require('./routes')
 app.use(routers)
