@@ -28,6 +28,10 @@ app.use(bodyParser.urlencoded({ extended: true })) // 用 app.use 規定每一�
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
+// 載入 passport.js
+const usePassport = require('./config/passport')
+usePassport(app)
+
 // 總路由
 const routers = require('./routes')
 app.use(routers)
