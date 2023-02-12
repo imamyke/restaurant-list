@@ -3,6 +3,14 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+// 載入 Session
+const session = require('express-session')
+app.use(session({
+  secret: 'ThisIsMySecret',
+  resave: false,
+  saveUninitialized: true
+}))
+
 // Mongoose(資料庫)連線
 require('./config/mongoose')
 
