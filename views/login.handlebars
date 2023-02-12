@@ -1,7 +1,7 @@
 <div class="container login-form" style="border-radius: 10px; overflow: hidden;">
   <div class="row">
     <div class="col-4" style="padding: 0;">
-      <div class="theme" style="height: 500px; position: relative;">
+      <div class="theme">
         <h1 class="title">Now,<br>Start your journey.</h1>
         <p class="para">A journey of a thousand miles must begin with a single step.<br>– Laozi, Philosopher</p>
         <div class="image"></div>
@@ -14,6 +14,7 @@
       <div class="form__info">
         <div class="form-container login-page">
           <h1 class="title">Log in</h1>
+          {{>message}}
           <form action="/users/login" method="POST">
             <!-- Info -->
             <div class="user__info" style="position: relative;">

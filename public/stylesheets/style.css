@@ -176,7 +176,7 @@ form.was-validated .form-control:valid ~ .valid-feedback {
   position: relative;
   background-color: #9c2d2d;
   padding: 20px;
-  height: 550px;
+  height: 100%;
 }
 .theme .title{
     color: #FFF;

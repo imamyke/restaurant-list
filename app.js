@@ -32,9 +32,15 @@ app.use(methodOverride('_method'))
 const usePassport = require('./config/passport')
 usePassport(app)
 
+// 載入 flash
+const flash = require('connect-flash')
+app.use(flash())
+
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.isAuthenticated()
   res.locals.user = req.user
+  res.locals.success_msg = req.flash('success_msg')  
+  res.locals.warning_msg = req.flash('warning_msg')  
   next()
 })
 
