@@ -4,13 +4,15 @@ const Restaurant = require('../../models/restaurant') // Schema
 
 // 瀏覽所有餐廳
 router.get('/', (req, res) => {
-  Restaurant.find() // 取出 model 裡的"所有"資料
+  const userId = req.user._id
+  Restaurant.find({ userId }) // 取出 model 裡的"所有"資料
     .lean() // 把 Mongoose 的 Model 物件轉換成乾淨的 JS "資料陣列"
     .then(restaurants => res.render('index', { restaurants }))
     .catch(error => console.error(error))
 })
 // 搜尋&排序
 router.get('/search', (req, res) => {
+  const userId = req.user._id
   let keyword = req.query.keyword.trim().toLowerCase() || ''
   const sort = req.query.sort
   let sorter = {}
@@ -39,7 +41,7 @@ router.get('/search', (req, res) => {
     sorter = { location: 'asc' }
     selected.location = true
   } 
-  Restaurant.find()
+  Restaurant.find({ userId })
   .lean()
   .sort(sorter)
   .then(restaurant => {
