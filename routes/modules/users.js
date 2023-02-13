@@ -10,8 +10,12 @@ router.get('/login', (req, res) => {
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/users/login'
-}))
+  failureRedirect: '/users/login',
+  failureFlash: true,
+  failureFlash: '請輸入正確的帳號或密碼'
+}), (req, res) => {
+  res.render('login', { error: req.flash('error') })
+})
 
 router.get('/logout', (req, res) => {
   req.logout()
