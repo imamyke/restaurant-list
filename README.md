@@ -15,7 +15,7 @@
 ### 使用排序按鈕顯示畫面
 ![MyImage](https://i.imgur.com/tj7Jyki.png)
 ### 餐廳詳細資訊
-![MyImage](https://i.imgur.com/mfqAqEJ.png)
+![MyImage](https://i.imgur.com/qHMsdjt.png)
 ### 新增餐廳資訊
 ![MyImage](https://i.imgur.com/z377syL.png)
 ### 表單輸入不完全時，表單驗證機制畫面
