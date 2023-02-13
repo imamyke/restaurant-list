@@ -33,8 +33,8 @@ router.post('/register', (req, res) => {
   // 建立 error 訊息空陣列
   const errors = []
   // 確認欄位都有填到
-  if (!name || !email || !password || !confirmPassword) {
-    errors.push({ message: '所有欄位都是必填。' })
+  if (!email || !password || !confirmPassword) {
+    errors.push({ message: '請確認欄位都已填寫完整' })
   }
   // 密碼與確認密碼是否相符
   if (password !== confirmPassword) {
