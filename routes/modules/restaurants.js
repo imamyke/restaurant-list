@@ -35,7 +35,7 @@ router.put('/:id', (req, res) => {
   const userId = req.user._id
   const _id = req.params.id // 字串
   return Restaurant.findOneAndUpdate({ _id, userId }, req.body)
-    .then(() => res.redirect('/'))
+    .then(() => res.redirect(`/restaurants/${_id}`))
     .catch(error => console.log(error))
 })
 // 刪除

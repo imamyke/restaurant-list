@@ -1,8 +1,35 @@
 <h1 class="mb-1 restaurant-show-title">{{restaurant.name}}</h1>
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-10 mx-auto">
-
+    <div class="col-12 mx-auto pb-2">
+      <div class="text-end">
+        <a href="/restaurants/{{ restaurant._id }}/edit" class="pe-3 icon fs-5"><i class="fa-solid fa-pencil text-secondary"></i></a>
+        <button type="button" class="bg-transparent icon fs-5" data-bs-toggle="modal" style="border: 0; padding: 0;"
+          data-bs-target="#a{{ restaurant._id }}">
+          <i class="fa-solid fa-trash-can text-secondary text-end"></i>
+        </button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="a{{ restaurant._id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">刪除食記</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              您確定要刪除{{ restaurant.name }}嗎?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+              <form action="/restaurants/{{ restaurant._id }}?_method=DELETE" method="POST">
+                <button id="submit-button" type="submit" class="btn btn-primary">確定</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
